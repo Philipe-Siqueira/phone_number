@@ -42,4 +42,13 @@ console.log(createPhoneNumber1([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 function createPhoneNumber2(numbers){
   return numbers.join('').replace(/(...)(...)(.*)/, '($1) $2-$3');
 }
-console.log(createPhoneNumber2([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])) 
+console.log(createPhoneNumber2([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+
+/*
+* Solução 4 - Usando replace dentro do array.reduce
+* Solution 4 -  Using replace into array.reduce
+*/
+function createPhoneNumber3(numbers){
+  return numbers.reduce((p,c) => p.replace('x',c), "(xxx) xxx-xxxx");
+}
+console.log(createPhoneNumber3([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
